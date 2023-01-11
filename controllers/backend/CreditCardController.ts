@@ -1,6 +1,7 @@
 import formidable from "formidable";
 import { NextApiRequest, NextApiResponse } from "next";
 import CreditCardService from "../../services/creditcardService";
+import { FirstDataParsedData } from "../../types/FirstData";
 
 export default class CreditCardController {
   private request;
