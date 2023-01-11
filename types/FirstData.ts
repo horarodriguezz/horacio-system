@@ -28,3 +28,13 @@ export enum PossibleConcept {
   PERIVA = "PERCEPCION IVA",
   FECHA = "ACRED.EN CTA.CTE.NRO:",
 }
+
+export enum UIConcepts {
+  IVA21 = "iva21",
+  COMISION21 = "comision21",
+  IVA105 = "iva105",
+  COMISION105 = "comision105",
+  PERIIBB = "perIIBB",
+  RETIIBB = "retIIBB",
+  PERIVA = "perIVA",
+}

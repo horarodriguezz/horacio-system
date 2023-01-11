@@ -1,4 +1,5 @@
 import HttpService from "../../services/frontend/httpService";
+import { FirstDataParsedData } from "../../types/FirstData";
 
 export default class CreditCardController {
   private httpService;
@@ -7,7 +8,9 @@ export default class CreditCardController {
     this.httpService = new HttpService();
   }
 
-  public async readFirstDataPdf(pdf: File) {
+  public async readFirstDataPdf(
+    pdf: File
+  ): Promise<{ status: number | undefined; data?: FirstDataParsedData }> {
     const formData = new FormData();
 
     formData.append("file", pdf);
@@ -21,9 +24,10 @@ export default class CreditCardController {
         },
       });
 
-      console.log(response);
+      return { status: response?.status, data: response?.data };
     } catch (error) {
       console.log(error);
+      return { status: 500, data: undefined };
     }
   }
 }

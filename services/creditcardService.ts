@@ -182,20 +182,52 @@ export default class CreditCardService {
     const sheet = workbook.addWorksheet("Resumen");
 
     sheet.columns = [
-      { header: "Fecha", key: "fecha", width: 16 },
-      { header: "Ret IIBB", key: "retIIBB", width: 16 },
-      { header: "Per IIBB", key: "perIIBB", width: 16 },
-      { header: "Per IVA", key: "perIVA", width: 16 },
-      { header: "Comisiones 21%", key: "comision21", width: 16 },
-      { header: "IVA 21%", key: "iva21", width: 16 },
-      { header: "Comisiones 10,5%", key: "comision105", width: 16 },
-      { header: "IVA 10,5%", key: "iva105", width: 16 },
+      {
+        header: "Fecha",
+        key: "fecha",
+        width: 20,
+      },
+      {
+        header: "Ret IIBB",
+        key: "retIIBB",
+        width: 20,
+      },
+      {
+        header: "Per IIBB",
+        key: "perIIBB",
+        width: 20,
+      },
+      {
+        header: "Per IVA",
+        key: "perIVA",
+        width: 20,
+      },
+      {
+        header: "Comisiones 21%",
+        key: "comision21",
+        width: 20,
+      },
+      {
+        header: "IVA 21%",
+        key: "iva21",
+        width: 20,
+      },
+      {
+        header: "Comisiones 10,5%",
+        key: "comision105",
+        width: 20,
+      },
+      {
+        header: "IVA 10,5%",
+        key: "iva105",
+        width: 20,
+      },
     ];
 
     data.daily.forEach((day) => sheet.addRow(day));
 
     await workbook.xlsx.writeFile(`./public/temp/${EXCEL_DEFAULT_NAME}`);
 
-    return path.join(__dirname, "public", "temp", EXCEL_DEFAULT_NAME);
+    return `${process.env.DOMAIN}/temp/${EXCEL_DEFAULT_NAME}`;
   }
 }
