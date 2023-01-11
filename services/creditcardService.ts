@@ -194,8 +194,8 @@ export default class CreditCardService {
 
     data.daily.forEach((day) => sheet.addRow(day));
 
-    await workbook.xlsx.writeFile(`./temp/${EXCEL_DEFAULT_NAME}`);
+    await workbook.xlsx.writeFile(`./public/temp/${EXCEL_DEFAULT_NAME}`);
 
-    return path.join(__dirname, "temp", EXCEL_DEFAULT_NAME);
+    return path.join(__dirname, "public", "temp", EXCEL_DEFAULT_NAME);
   }
 }
