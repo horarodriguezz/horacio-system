@@ -7,14 +7,14 @@ export default class CreditCardController {
     this.httpService = new HttpService();
   }
 
-  public async readPdf(pdf: File) {
+  public async readFirstDataPdf(pdf: File) {
     const formData = new FormData();
 
     formData.append("file", pdf);
 
     try {
       const response = await this.httpService.post({
-        url: "/creditcards",
+        url: "/creditcards/firstdata",
         body: formData,
         headers: {
           "Content-type": "multipart/form-data",

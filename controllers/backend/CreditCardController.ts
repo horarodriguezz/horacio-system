@@ -27,9 +27,18 @@ export default class CreditCardController {
             "Ha ocurrido un error al leer el pdf. Por favor intente nuevamente mas tarde.",
         });
 
-      this.service.pdfToData(files.file);
-
-      return this.response.status(200);
+      this.service
+        .pdfToData(files.file)
+        .then((res) => {
+          this.response.status(200).json(res);
+        })
+        .catch((e) => {
+          console.log(e);
+          return this.response.status(500).json({
+            message:
+              "Ha ocurrido un error al leer el pdf. Por favor intente nuevamente mas tarde.",
+          });
+        });
     });
   }
 }

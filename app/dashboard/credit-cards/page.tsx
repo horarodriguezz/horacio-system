@@ -7,7 +7,7 @@ export default function Page() {
   const creditCardController = new CreditCardController();
 
   const onChange = async (file: File) => {
-    creditCardController.readPdf(file);
+    creditCardController.readFirstDataPdf(file);
   };
 
   return (

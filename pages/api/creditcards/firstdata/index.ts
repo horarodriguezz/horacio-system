@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import CreditCardController from "../../../controllers/backend/CreditCardController";
-import CreditCardService from "../../../services/creditcardService";
+import CreditCardController from "../../../../controllers/backend/CreditCardController";
+import CreditCardService from "../../../../services/creditcardService";
 
 export const config = {
   api: {
